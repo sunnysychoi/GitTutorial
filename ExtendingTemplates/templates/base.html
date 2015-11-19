@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>{{ title }}</title>
+   <link rel="stylesheet" href="static/style.css">
+ </head>
+ <body>
+  {% if name %}
+    <h1>The name of this file is {{name}}</h1>
+  {% endif %}
+    
+ <header>
+      <nav>
+        <h1>Colleen van Lent</h1>
+        <ul>
+         <li><a href="index" 
+          {% if name == "index" %}
+          class = "current"
+          {% endif %}
+          >Home</a></li>
+         <li><a href="courses" 
+           {% if name == "courses" %}
+           class = "current"
+           {% endif %}
+           >Courses</a></li>
+         <li><a href="interests"
+          {% if name == "interests" %}
+          class = "current"
+          {% endif %}
+          >Interests</a></li>
+         <li><a href="other"
+         {% if name =="other" %}
+         class = "current"
+         {% endif %} 
+          >Other</a></li>
+        </ul>
+      </nav>
+    </header>
+  <!--   <div id="content">
+      <img src = "static/logos_umsi.png" alt = "UMSI logo"/><h2>Home</h2>Here is where I will put some interesting widgets, but for now, just some pictures.
+
+    </div> -->
+    {% block content %}
+    You should never see this!!
+    {% endblock %}
+    
+    <footer>
+      &copy; Colleen van Lent 2015
+    </footer>
+
+ </body>
+</html>
